@@ -1,0 +1,169 @@
+
+
+body{
+    background-color: rgb(137, 155, 218);
+ 
+}
+
+#header{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    background-color: white;
+    padding-bottom: 10px;
+    margin-left: 350px;
+    margin-right: 350px;
+    border-radius: 10px;
+    
+}
+
+.catagories{
+    margin-top: 50px;
+    margin-left: 20px;
+ 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 400px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#foundation{
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+#major{
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-weight: bold;
+    background-color:white;
+}
+
+#minor{
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+#foundation:hover {background-color: #8ce714}
+
+#foundation:active {
+  background-color: #e77911;
+  box-shadow: 0 5px rgb(214, 24, 24);
+  transform: translateY(4px);
+}
+#major:hover {background-color: #8ce714}
+
+#major:active {
+  background-color: #e77911;
+  box-shadow: 0 5px rgb(214, 24, 24);
+  transform: translateY(4px);
+}
+#minor:hover {background-color: #8ce714}
+
+#minor:active {
+  background-color: #e77911;
+  box-shadow: 0 5px rgb(214, 24, 24);
+  transform: translateY(4px);
+}
+
+
+input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    padding-right:350px;
+    padding-left: 5px;
+    margin-left: 30px;
+  }
+.search-container button {
+ 
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+
+.threeButtons{
+      margin-top: 30px;
+      margin-left: 30px;
+  }
+
+#allCourses{
+    width: 250px;
+    height: 30px;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+#tutorsPoint{
+    width: 250px;
+    height: 30px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+  }
+
+#makeRoutine{
+    width: 250px;
+    height: 30px;
+    font-weight: bold;
+    background-color: yellow;
+}
+#allCourses:hover{
+    background-color: #8ce714;
+
+}
+#allCourses:active {
+    background-color: #e77911;
+    box-shadow: 0 5px rgb(214, 24, 24);
+    transform: translateY(4px);
+}
+
+#tutorsPoint:hover{
+    background-color: #8ce714;
+
+}
+#tutorsPoint:active {
+    background-color: #e77911;
+    box-shadow: 0 5px rgb(214, 24, 24);
+    transform: translateY(4px);
+}
+
+#makeRoutine:hover{
+    background-color: #8ce714;
+
+}
+#makeRoutine:active {
+    background-color: #e77911;
+    box-shadow: 0 5px rgb(214, 24, 24);
+    transform: translateY(4px);
+}
+
+.profile{
+    height: 100px;
+    width: 100px;
+    float: right;
+    background-color: yellow;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
