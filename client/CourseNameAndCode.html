@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Course Name and Code</title>
+        <link rel ="stylesheet" href="cssFolder/styles.css">
+    </head>
+    <body>
+        <div class="CourseName">
+            <h3>Course Name and Code</h3>
+        </div>
+
+        <div class="ContentContainer">
+            <div class="threeButtons">
+                <button id="courseContent"><a href="#" > View Course Content </a> </button>
+                  
+            </div>
+              
+            <div class="threeButtons">
+                  <button id="previousQuestion"><a href="#">Previous Question </a></button>
+            </div>
+              
+            <div class="threeButtons">
+                <button id="previousExperiences"><a href="#">Previous Experiences</a></button>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="ml7">
+                <span class="text-wrapper">
+                  <span class="letters">Here is Your Tutor Point</span>
+                </span>
+              </h1>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        </div>
+
+        <div class="tutorPointButton">
+            <button id="tutorBtn">Tutor Point</button>
+        </div>
+
+        <script>
+                    // Wrap every letter in a span
+                var textWrapper = document.querySelector('.ml7 .letters');
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                anime.timeline({loop: true})
+                .add({
+                targets: '.ml7 .letter',
+                translateY: ["1.1em", 0],
+                translateX: ["0.55em", 0],
+                translateZ: 0,
+                rotateZ: [180, 0],
+                duration: 750,
+                easing: "easeOutExpo",
+                delay: (el, i) => 50 * i
+                }).add({
+                targets: '.ml7',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+                });
+        </script>
+    </body>
+</html>

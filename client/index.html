@@ -11,37 +11,46 @@
 
         <div class="slideshow-container">
 
-            <div class="mySlides fade">
-              <div class="numbertext">1 / 3</div>
+            <div class="mySlides">
+              <div class="numbertext"> </div>
               <img src="images/book.jpg" style="width:100%">
               <div class="text"> </div>
             </div>
             
-            <div class="mySlides fade">
-              <div class="numbertext">2 / 3</div>
+            <div class="mySlides">
+              <div class="numbertext"> </div>
               <img src="images/content.jpg" style="width:100%">
               <div class="text"> </div>
             </div>
             
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 3</div>
+            <div class="mySlides">
+              <div class="numbertext"> </div>
               <img src="images/student.jpg" style="width:100%">
               <div class="text"> </div>
             </div>
 
             <br>
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
             
         </div>
 
         <div class="mainBody">
             <div class="first">
-                <header id="header"><b> Your Course Mate </b> </header>
+              <h1 class="ml5">
+                <span class="text-wrapper">
+                  <span class="line line1"></span>
+                  <span class="letters letters-left">Your Course</span>
+                   
+                  <span class="letters letters-right">Mate</span>
+                  <span class="line line2"></span>
+                </span>
+              </h1>
+              
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
                 <div class="profile">
 
                 </div>
@@ -64,7 +73,8 @@
             </div>
               
             <div class="threeButtons">
-                <button id="allCourses">All Courses</button>
+              <button id="allCourses"><a href="CourseNameAndCode.html" >All Courses</a> </button>
+                
             </div>
             
             <div class="threeButtons">
@@ -72,7 +82,7 @@
             </div>
             
             <div class="threeButtons">
-                <button id="makeRoutine">Make Your Semester Routine</button>
+              <button id="makeRoutine">Make Your Semester Routine</button>
             </div>
 
         </div>
@@ -97,6 +107,50 @@
               dots[slideIndex-1].className += " active";
               setTimeout(showSlides, 2000); // Change image every 2 seconds
             }
+
+//Your course mate ...
+              anime.timeline({loop: true})
+              .add({
+              targets: '.ml5 .line',
+              opacity: [0.5,1],
+              scaleX: [0, 1],
+              easing: "easeInOutExpo",
+                duration: 700
+              }).add({
+              targets: '.ml5 .line',
+              duration: 600,
+              easing: "easeOutExpo",
+              translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+              }).add({
+              targets: '.ml5 .ampersand',
+              opacity: [0,1],
+              scaleY: [0.5, 1],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=600'
+            }).add({
+              targets: '.ml5 .letters-left',
+              opacity: [0,1],
+              translateX: ["0.5em", 0],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=300'
+            }).add({
+              targets: '.ml5 .letters-right',
+              opacity: [0,1],
+              translateX: ["-0.5em", 0],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=600'
+            }).add({
+              targets: '.ml5',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            });
+
+
         </script>
 
     </body>
