@@ -387,6 +387,7 @@ img {vertical-align: middle;}
   margin-left: 460px;
   background-color: #bbb;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .lowerPart{
@@ -412,3 +413,16 @@ img {vertical-align: middle;}
 }
 
 
+/**********************************************  Sign In  *********************/
+
+.courseTable{
+  margin-top: 30px;
+  margin-left: 150px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.courseTable data{
+  margin-left: 5px;
+  font-weight: bold;
+}
