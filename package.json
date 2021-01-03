@@ -1,0 +1,24 @@
+{
+  "name": "project309-group-2",
+  "version": "1.0.0",
+  "description": "Project details and documentation goes here",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iub-cse-shq/project309-group-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iub-cse-shq/project309-group-2/issues"
+  },
+  "homepage": "https://github.com/iub-cse-shq/project309-group-2#readme",
+
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
