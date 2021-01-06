@@ -7,6 +7,9 @@ body{
 a{
   text-decoration: none;
 }
+input{
+  text-decoration: none;
+}
 
 #header{
     font-size: 20px;
@@ -380,14 +383,13 @@ img {vertical-align: middle;}
 /**********************************************  Sign In  *********************/
 
 .headFromSignUp{
-  font-size: 20px;
-  height: 40px;
-  width: 400px;
+  font-size: 40px;
   margin-top: 10px;
-  margin-left: 460px;
-  background-color: #bbb;
+  margin-left: 50px;
   text-align: center;
   margin-bottom: 40px;
+  color: rgb(13, 212, 238);
+  text-shadow: 3px 3px #FF0000;
 }
 
 .lowerPart{
@@ -395,25 +397,62 @@ img {vertical-align: middle;}
 }
 
 #login{
-  margin-left: 30px;
-  margin-right: 350px;
+  margin-left: 560px;
+  height: 30px;
+  width: 100px;
 }
 #createAccount{
+  height: 30px;
+  width: 150px;
 
 }
 #forgetPassword{
   margin-top: 120px;
-  margin-left: 150px;
-
+  margin-left: 570px;
+  height: 30px;
+  width: 250px;
 }
 
 .upper{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 370px;
+}
+
+input[type=password] {
+  padding: 6px;
+  margin-top: 10px;
+  font-size: 17px;
+  border: none;
+  padding-right:350px;
+  padding-left: 5px;
+  margin-left: 30px;
+}
+
+video{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  background: rgba(0,0,0,0);
+
 }
 
 
-/**********************************************  Sign In  *********************/
+/**********************************************  Routine   *********************/
 
 #courseTable {
   font-family: Arial, Helvetica, sans-serif;
@@ -438,3 +477,5 @@ img {vertical-align: middle;}
   background-color: #4CAF50;
   color: white;
 }
+
+ 

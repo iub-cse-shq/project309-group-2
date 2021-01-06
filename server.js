@@ -9,7 +9,17 @@ app.use(express.static('public'))
 //index or main page
 app.get('/', function (request, response) {
     //console.log(request)
+    response.sendFile(__dirname + '/client/SignIn.html')
+})
+
+app.get('/index', function (request, response) {
+    //console.log(request)
     response.sendFile(__dirname + '/client/index.html')
+})
+
+app.get('/SignUp', function (request, response) {
+    //console.log(request)
+    response.sendFile(__dirname + '/client/SignUp.html')
 })
 
 //Course Name and Code page/ course page

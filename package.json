@@ -2,7 +2,7 @@
   "name": "project309-group-2",
   "version": "1.0.0",
   "description": "Project details and documentation goes here",
-  "main": "index.html",
+  "main": "SignIn.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
     
