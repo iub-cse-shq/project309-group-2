@@ -1,0 +1,10 @@
+<%- include('partials/header.ejs') %>
+
+     <h1>All Routine View</h1>
+     <% console.log(routines) %>
+     <ul>
+         <% routines.forEach((routine)=> { %>
+           <li><%= routine.FName %></li>
+        <% }) %>
+     </ul>
+ <%- include('partials/footer.ejs') %>

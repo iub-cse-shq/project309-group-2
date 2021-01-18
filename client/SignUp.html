@@ -13,28 +13,37 @@
 
         <div class = "main">
             <div class="fname">
-                <input id="FName" type="text" placeholder="Enter Your First Name">
-            </div>
-            <div>
-                <input id="LName" type="text" placeholder="Enter Your Last Name">
-            </div>
-            <div>
-                <input id="Dept" type="text" placeholder="Enter Your Department">
-            </div>
-            <div>
-                <input id="EmAddress" type="text" placeholder="Enter Your Email Address">
-            </div>
-            <div>
-                <input id="ContNumber" type="number" placeholder="Enter Your Contact Number">
-            </div>
-            <div>
-                <input id="Password" type="password" placeholder="Enter Your Password">
-            </div>
-        </div>
-
-        <div>
-            <button id="signup"><a href="/index">Sign Up</a></button>
-        </div>
+            <div><input id="FName" type="text" placeholder="Enter Your First Name"></div>
+            <div><input id="LName" type="text" placeholder="Enter Your Last Name"></div>
+            <div><input id="Dept" type="text" placeholder="Enter Your Department"></div>
+            <div><input id="EmAddress" type="text" placeholder="Enter Your Email Address"></div>
+            <div><input id="ContNumber" type="number" placeholder="Enter Your Contact Number"></div>
+            <div><input id="Password" type="password" placeholder="Enter Your Password"></div>
+            <div><button id="save">Sign Up</button></div>
+        <script>
+            //add a click listener to the button,
+            //get input values and print in console.log
+            $('#save').click(function(){
+              let SignUp = {FName: $('#FName').val(),
+                            LName: $('#LName').val(),
+                            Dept: $('#Dept').val(),
+                            EmAddress: $('#EmAddress').val(),
+                            ContNumber: $('#ContNumber').val(),
+                            Password: $('#Password').val()}
+             console.log(article)
+             $.ajax({
+                 type:'POST',
+                 url:'/signUp/new',
+                 data: article,
+                 success: response => {
+                     console.log(response)
+                 },
+                 error: response => {
+                     console.log(response)
+                 }
+             })
+            })
+        </script>
             
         </body>
 </html>
