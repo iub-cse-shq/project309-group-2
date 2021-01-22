@@ -1,14 +1,42 @@
 
 
 body{
-    background-color: rgb(137, 155, 218);
+    background-color: rgb(230, 241, 180);
  
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 a{
   text-decoration: none;
 }
 input{
   text-decoration: none;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+.image{
+  margin-top: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(235, 227, 163);
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 #header{
@@ -183,6 +211,10 @@ img {vertical-align: middle;}
   max-width: 1000px;
   position: relative;
   margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mainBody{
+  margin-top: 30px;
 }
 
 /* Caption text */

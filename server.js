@@ -3,6 +3,7 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var app = express()
 var server = http.Server(app)
+const ejs = require('ejs'); 
 var Routine = require('../project309-group-2/client/routine.model')
 var SignUp = require('../project309-group-2/client/signUp.model')
 
@@ -23,15 +24,41 @@ mongoose.connection.on('error', function (err) {
 
 //Server routes are here
 //index or main page
-app.get('/', function (request, response) {
-    //console.log(request)
-    response.sendFile(__dirname + '/client/SignIn.html')
-})
+// app.get('/', function (request, response) {
+//     //console.log(request)
+//     response.sendFile(__dirname + '/views/SignIn.ejs')
+// })
 
-app.get('/index', function (request, response) {
-    //console.log(request)
-    response.sendFile(__dirname + '/client/index.html')
-})
+app.get('/', function (req, res) { 
+  
+  // Render page using renderFile method 
+  ejs.renderFile('signIn.ejs', {},  
+      {}, function (err, template) { 
+      if (err) { 
+          throw err; 
+      } else { 
+          res.end(template); 
+      } 
+  }); 
+});
+
+// app.get('/index', function (request, response) {
+//     //console.log(request)
+//     response.sendFile(__dirname + '/client/index.html')
+// })
+
+app.get('/index', function (req, res) { 
+  
+  // Render page using renderFile method 
+  ejs.renderFile('index.ejs', {},  
+      {}, function (err, template) { 
+      if (err) { 
+          throw err; 
+      } else { 
+          res.end(template); 
+      } 
+  }); 
+});
 
 app.get('/SignUp', function (request, response) {
     //console.log(request)
@@ -49,10 +76,7 @@ app.get('/routine/Routine', function (request, response) {
     //console.log(request)
     response.sendFile(__dirname + '/client/Routine.html')
 })
-
-var routines = [{title: 'test', content: 'test'},
-                {title: 'test2', content: 'test2'},
-                {title: 'test3', content: 'test3'}]
+ 
 app.post('/routine/new', function (request, response) {
     var newRoutine = new Routine(request.body)
     newRoutine.save(function (err, data) {
@@ -66,9 +90,7 @@ app.post('/routine/new', function (request, response) {
     })
    })
 
-var SignUps = [{title: 'test', content: 'test'},
-                   {title: 'test2', content: 'test2'},
-                   {title: 'test3', content: 'test3'}]
+ 
 app.post('/signUp/new', function (request, response) {
     var newSignUp = new SignUp(request.body)
         newSignUp.save(function (err, data) {
