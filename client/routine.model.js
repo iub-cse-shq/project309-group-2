@@ -1,8 +1,8 @@
 var mongoose = require('mongoose')
 const RoutineSchema = new mongoose.Schema({
- coursenName: String,
- id: Number,
- time: Date,
+ courseName: String,
+ courseCode: Number,
+ time: String,
  section: Number
 })
 var Routine = mongoose.model('Routine', RoutineSchema)

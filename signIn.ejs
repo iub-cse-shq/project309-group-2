@@ -26,10 +26,8 @@
                     <input type="password" id="password" placeholder="Enter your password">
                 </div>
             </div>
-
-
             <div class="lowerPart">
-                <button  id="login"><a href="/index">Login</a></button>
+                <button onClick="login()" id="login"> Login </button>
                 <button id="createAccount"><a href="/SignUp ">Create Your Account</a></button>
             </div>
 
@@ -46,18 +44,18 @@
         
 
         <script>
-            function LogIn()
-            {
-                let email = $("#email").val()
-                let password = $ ("#password").val()
-                console.log(email, password)
-                if(email == "Admin" && password == "Admin")
-                {
-                }
-                else {
-                    alert("Error")
-                }
-            }
+
+        function login()
+        {
+        let id= $('#email').val()
+        let password = $('#password').val()
+
+        if (id=='admin' && password=='admin'){
+           window.location.href="/adminContent"
+        }else{
+            window.location.href="/index"
+        }
+    }
         </script>
 
 

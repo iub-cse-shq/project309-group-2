@@ -510,4 +510,18 @@ video{
   color: white;
 }
 
- 
+/*makeCourseContent.ejs  ........................
+*/
+.entity{
+  margin: 10px;
+}
+
+.ContentName{
+  margin-left: 300px;
+  font-size: medium;
+  height: 20px;
+  width: 200px;
+}
+#new{
+  font-size: medium;
+}

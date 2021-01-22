@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Admin Page</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <div class="ContentName">Create a new Course</div>
+        <div class = "main">
+            <div class= "entity"><input id="courseName" type="text" placeholder="Enter Course Name"></div>
+            <div class= "entity"><input id="courseCode" type="text" placeholder="Enter Course Code"></div>
+            <div class= "entity"><input id="content" type="text" placeholder="Enter Course Content"></div>
+            <div class= "entity"><input id="question" type="text" placeholder="Enter Previous Questions"></div>
+            <div class= "entity"><input id="comments" type="text" placeholder="Previous Coments "></div>
+            <div class= "entity"><input id="image" type="text" placeholder="Enter Image URL "></div>
+            
+            <div><button id="saveContent">Create Course</button></div>
+        </div>
+        <button id="routine"><a href="/addTime">Input Course Timming</a></button>
+
+
+
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+        </script>
+        
+        <script>
+            //add a click listener to the button,
+            //get input values and print in console.log
+            $('#saveContent').click(function(){
+              let Course = {courseName: $('#courseName').val(),
+                            courseCode: $('#courseCode').val(),
+                            content: $('#content').val(),
+                            questions : $('#question').val(),
+                            comments: $('#comments').val(),
+                            image: $('#image').val()
+                        }
+                $.ajax({
+                 type:'POST',
+                 url:'/course/new',
+                 data: Course,
+                 success: response => {
+                     console.log(response)
+                 },
+                 error: response => {
+                     console.log(response)
+                 }
+             })
+        })
+        </script>
+    </body>
+</html>

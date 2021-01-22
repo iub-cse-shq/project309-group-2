@@ -8,6 +8,7 @@
     </head>
     <body>
         <div class="CourseName">
+            <% courses.forEach((course)=>{ %>
             <h3>Course Name and Code</h3>
         </div>
 
@@ -40,6 +41,8 @@
         </div>
 
         <script>
+
+
                     // Wrap every letter in a span
                 var textWrapper = document.querySelector('.ml7 .letters');
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");

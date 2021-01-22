@@ -6,6 +6,7 @@ var server = http.Server(app)
 const ejs = require('ejs'); 
 var Routine = require('../project309-group-2/client/routine.model')
 var SignUp = require('../project309-group-2/client/signUp.model')
+var Course = require('../project309-group-2/client/course.model')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
@@ -60,26 +61,75 @@ app.get('/index', function (req, res) {
   }); 
 });
 
+// app.get('/adminContent', function (req, res) { 
+  
+//   // Render page using renderFile method 
+//   ejs.renderFile('makeCourseContent.ejs', {},  
+//       {}, function (err, template) { 
+//       if (err) { 
+//           throw err; 
+//       } else { 
+//           res.end(template); 
+//       } 
+//   }); 
+// });
+app.get('/adminContent', function (request, response) {
+  //console.log(request)
+  response.sendFile(__dirname + '/client/makeCourseContent.html')
+})
+
 app.get('/SignUp', function (request, response) {
     //console.log(request)
     response.sendFile(__dirname + '/client/SignUp.html')
 })
 
-//Course Name and Code page/ course page
+//ALL COURSE PAGE
+
+// app.get('/CourseNameAndCode', function (req, res) { 
+  
+//   // Render page using renderFile method 
+//   ejs.renderFile('allCourses.ejs', {},  
+//       {}, function (err, template) { 
+//       if (err) { 
+//           throw err; 
+//       } else { 
+//           res.end(template); 
+//       } 
+//   }); 
+// });
+
 app.get('/CourseNameAndCode', function (request, response) {
-    //console.log(request)
-    response.sendFile(__dirname + '/client/CourseNameAndCode.html')
+
+  Course.find({}, function (err, data) {
+      response.render('allCourses.ejs', {
+          courses: data
+      })
+  })
 })
+
+
+
+// app.get('/CourseNameAndCode', function (request, response) {
+//     //console.log(request)
+//     response.sendFile(__dirname + '/client/CourseNameAndCode.html')
+// })
 
 //Routine Page
 app.get('/routine/Routine', function (request, response) {
     //console.log(request)
     response.sendFile(__dirname + '/client/Routine.html')
 })
+
+app.get('/addTime', function (request, response) {
+  //console.log(request)
+  response.sendFile(__dirname + '/client/makeRoutine.html')
+})
  
-app.post('/routine/new', function (request, response) {
-    var newRoutine = new Routine(request.body)
-    newRoutine.save(function (err, data) {
+ 
+app.post('/CourseTime/new', function (request, response) {
+    var newCourseTime = new Routine(request.body)
+    console.log(newCourseTime)
+    newCourseTime.save(function (err, data) {
       if (err)
         return response.status(400).json({
           error: 'Title is missing'
@@ -88,7 +138,7 @@ app.post('/routine/new', function (request, response) {
         message: 'Routine created successfully'
       })
     })
-   })
+  })
 
  
 app.post('/signUp/new', function (request, response) {
@@ -104,7 +154,25 @@ app.post('/signUp/new', function (request, response) {
    })
 }) 
 
-   app.get('/routine/:id', function (request, response) {
+
+ 
+app.post('/course/new', function (request, response) {
+  var newCourse = new Course(request.body)
+  console.log(newCourse)
+  console.log("hello")
+      newCourse.save(function (err, data) {
+          if (err)
+            return response.status(400).json({
+             error: 'New course is not added successfully'
+            })
+          return response.status(200).json({
+            message: 'Course Created Successfully'
+      })
+ })
+}) 
+
+
+app.get('/routine/:id', function (request, response) {
     Routine.findById(request.params.id, function (err, data) {
       response.render('routine.ejs', {
         routine: data
@@ -137,6 +205,15 @@ app.post('/signUp/new', function (request, response) {
       })
     })
    })
+
+   app.get('/seeDetails', function (request, response) {
+
+    Course.find({}, function (err, data) {
+        response.render('DetailsCourse.ejs', {
+            courses: data
+        })
+    })
+  })
 
 server.listen(process.env.PORT || 3000, 
 process.env.IP || 'localhost', function(){
