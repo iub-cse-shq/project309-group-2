@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 var app = express()
 var server = http.Server(app)
 const ejs = require('ejs'); 
-var Routine = require('../project309-group-2/client/routine.model')
+var Routine = require('../project309-group-2/client/routineForm.model')
 var SignUp = require('../project309-group-2/client/signUp.model')
 
 app.use(bodyParser.json())
@@ -65,6 +65,11 @@ app.get('/SignUp', function (request, response) {
     response.sendFile(__dirname + '/client/SignUp.html')
 })
 
+app.get('/RoutineForm', function (request, response) {
+  //console.log(request)
+  response.sendFile(__dirname + '/client/RoutineForm.html')
+})
+
 //Course Name and Code page/ course page
 app.get('/CourseNameAndCode', function (request, response) {
     //console.log(request)
@@ -104,6 +109,19 @@ app.post('/signUp/new', function (request, response) {
    })
 }) 
 
+app.post('/routineForm/new', function (request, response) {
+  var newSignUp = new SignUp(request.body)
+      newSignUp.save(function (err, data) {
+          if (err)
+            return response.status(400).json({
+             error: 'Course Name is missing'
+            })
+          return response.status(200).json({
+            message: 'Routine Created Successfully'
+      })
+ })
+}) 
+
    app.get('/routine/:id', function (request, response) {
     Routine.findById(request.params.id, function (err, data) {
       response.render('routine.ejs', {
@@ -137,6 +155,23 @@ app.post('/signUp/new', function (request, response) {
       })
     })
    })
+
+   app.get('/routineForm/:id', function (request, response) {
+    Routine.findById(request.params.id, function (err, data) {
+      response.render('routineForm.ejs', {
+        routine: data
+      })
+    })
+   })
+   
+   app.get('/routineForms/all', function (request, response) {
+    Routine.find({}, function (err, data) {
+      response.render('allRoutineForms.ejs', {
+        routines: data
+      })
+    })
+   })
+
 
 server.listen(process.env.PORT || 3000, 
 process.env.IP || 'localhost', function(){
