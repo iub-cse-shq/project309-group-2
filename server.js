@@ -14,7 +14,7 @@ app.use(express.static('public'))
 //DB connection
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-var dbURL = 'mongodb://localhost:27017/projectGroup#2' 
+var dbURL = 'mongodb://localhost:27017/projectGroup2' 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connection.on('error', function (err) {
  console.log(err)
@@ -33,7 +33,7 @@ app.get('/index', function (request, response) {
     response.sendFile(__dirname + '/client/index.html')
 })
 
-app.get('/signUp/SignUp', function (request, response) {
+app.get('/SignUp', function (request, response) {
     //console.log(request)
     response.sendFile(__dirname + '/client/SignUp.html')
 })
@@ -77,7 +77,7 @@ app.post('/signUp/new', function (request, response) {
                error: 'Title is missing'
               })
             return response.status(200).json({
-              message: 'SignUp created successfully'
+              message: 'Account Created Successfully'
         })
    })
 }) 
@@ -120,4 +120,4 @@ server.listen(process.env.PORT || 3000,
 process.env.IP || 'localhost', function(){
   				console.log('Server running');
 })
-module.exports = {app, server}
+module.exports = {app, server,mongoose}
