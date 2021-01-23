@@ -470,6 +470,9 @@ video{
   object-fit: cover;
   z-index: -2;
 }
+h3{
+  font-size: 30px;
+}
 
 .overlay{
   position: absolute;
@@ -524,4 +527,37 @@ video{
 }
 #new{
   font-size: medium;
+}
+
+/*Course Tutorial....................
+*/
+.CourseTutorial{
+  height: 90px;
+  width: 500px;
+  background-color: #a7a7a7;
+  margin-left: 410px;
+  margin-top: 10px;
+  border-radius: 20px;
+  text-align: center;
+  
+}
+
+/*Instractor......*/
+.instractorButton{
+  margin-top: 20px;
+  height: 200px;
+  width: 320px;
+  background-color: #a7a7a7;
+  margin-left: 40px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+#insBtn{
+  width: 180px;
+  height: 30px;
+  font-weight: bold;
+  background-color: #ebd767;
 }

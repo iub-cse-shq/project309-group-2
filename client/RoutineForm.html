@@ -30,15 +30,15 @@
             //add a click listener to the button,
             //get input values and print in console.log
             $('#save').click(function(){
-              let SignUp = {CName: $('#CName').val(),
+              let Routine = {CName: $('#CName').val(),
                             CodeId: $('#id').val(),
                             Section: $('#sec').val(),
                             Time: $('#time').val()}
-              console.log(SignUp.Password)
+              console.log(Routine)
              $.ajax({
                  type:'POST',
-                 url:'/routineForm/new',
-                 data: SignUp,
+                 url:'/CourseTime/new',
+                 data: Routine,
                  success: response => {
                      console.log(response)
                  },
