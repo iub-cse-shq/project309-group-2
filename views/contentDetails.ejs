@@ -1,0 +1,17 @@
+<%- include('partials/courseDetailsHeader.ejs') %>
+    <div class="container">
+        <% courses.forEach((course)=>{ %>
+        <div class="image">
+            <img src="<%= course.image %>">
+            <h3><%= course.courseName %></h3>
+            <h4 id="code"><%= course.courseCode %></h4>
+        </div>
+        <% }) %>
+    </div>
+    <% courses.forEach((course)=>{ %>
+    <div class="container">
+        <h2><%= course.content %></h2> 
+    </div>
+    <% }) %>
+    </body>
+</html>

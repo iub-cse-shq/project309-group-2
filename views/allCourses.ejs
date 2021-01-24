@@ -1,11 +1,8 @@
-<html>
-    <head>
-        <title>
-            All Courses
-        </title>
-        <link rel="stylesheet" href="/styles.css"/>
-    </head>
-    <body>
+<%- include('partials/courseDetailsHeader.ejs') %>
+        <div class="CourseName">
+ 
+            <h3>All Courses</h3>
+        </div>
             <div class="container">
                 <% courses.forEach((course)=>{ %>
                 <div class="image">
@@ -15,7 +12,6 @@
                     <a href="/<%= course.courseCode %>">Details</a>
                 </div>
                 <% }) %>
-    
             </div>
     </body>
 </html>

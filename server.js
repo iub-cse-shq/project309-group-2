@@ -127,14 +127,14 @@ app.get('/CourseNameAndCode', function (request, response) {
 //     response.sendFile(__dirname + '/client/Routine.html')
 // })
 
-app.get('/routine', function (request, response) {
+// app.get('/routine', function (request, response) {
 
-  Course.find({}, function (err, data) {
-    response.render('Routine.ejs', {
-      courses: data
-    })
-  })
-})
+//   Course.find({}, function (err, data) {
+//     response.render('Routine.ejs', {
+//       courses: data
+//     })
+//   })
+// })
 
 app.get('/addTime', function (request, response) {
   //console.log(request)
@@ -278,6 +278,43 @@ app.get('/213', function (request, response) {
   })
 })
 
+app.get('/309', function (request, response) {
+
+  Course.find({}, function (err, data) {
+    response.render('webApplication.ejs', {
+      courses: data
+    })
+  })
+})
+
+app.get('/webContent', function (request, response) {
+
+  Course.find({courseName : "Web Application" }, function (err, data) {
+    response.render('contentDetails.ejs', {
+      courses: data
+    })
+  })
+})
+
+app.get('/dataContent', function (request, response) {
+
+  Course.find({courseName : "Data Structure" }, function (err, data) {
+    response.render('contentDetails.ejs', {
+      courses: data
+    })
+  })
+})
+
+
+app.get('/algoContent', function (request, response) {
+
+  Course.find({courseName : "Algorithm" }, function (err, data) {
+    response.render('contentDetails.ejs', {
+      courses: data
+    })
+  })
+})
+
 app.get('/routineForm/:id', function (request, response) {
   Routine.findById(request.params.id, function (err, data) {
     response.render('routineForm.ejs', {
@@ -315,6 +352,14 @@ app.get('/Allinstractor', function (request, response) {
   Instractor.find({}, function (err, data) {
     response.render('tutorial.ejs', {
       instractors: data
+    })
+  })
+})
+
+app.get('/Routine', function (request, response) {
+  Routine.find({}, function (err, data) {
+    response.render('Routine.ejs', {
+      routine: data
     })
   })
 })

@@ -37,6 +37,11 @@ input{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
   text-align: center;
+  transition: transform .2s;
+}
+
+.image:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 #header{
@@ -139,7 +144,7 @@ input[type=text] {
 
 .threeButtons{
       margin-top: 30px;
-      margin-left: 30px;
+      margin-left: 70px;
   }
 
 #allCourses{
@@ -211,7 +216,8 @@ img {vertical-align: middle;}
   max-width: 1000px;
   position: relative;
   margin: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(252, 8, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-top: 50px;
 }
 .mainBody{
   margin-top: 30px;
@@ -337,6 +343,7 @@ img {vertical-align: middle;}
   background-color: #ebd767;
   font-weight: bold;
   border-radius: 10px;
+  
 }
 
 #courseContent{
@@ -532,16 +539,19 @@ h3{
 /*Course Tutorial....................
 */
 .CourseTutorial{
-  height: 90px;
-  width: 500px;
+  height: 80px;
+  width: 700px;
   background-color: #a7a7a7;
-  margin-left: 410px;
+  margin-left: 320px;
   margin-top: 10px;
   border-radius: 20px;
   text-align: center;
-  
+  transition: transform .2s;
 }
 
+.CourseTutorial:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 /*Instractor......*/
 .instractorButton{
   margin-top: 20px;
@@ -553,6 +563,11 @@ h3{
   font-size: 20px;
   font-weight: bold;
   border-radius: 20px;
+  transition: transform .2s;
+}
+
+.instractorButton:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 #insBtn{

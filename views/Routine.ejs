@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Make Routine</title>
-        <link rel="stylesheet" href="/styles.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="headFromSignUp">
-            <h3>Your Course Mate</h3>
-        </div>
 
-        <div class="search-container">
-            <form action="/action_page.php">
-              <input type="text" placeholder="Enter Your Course....." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
+<head>
+    <title>Make Routine</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-        <div id="courseTable">
-            <table>
-                <tr>
-                    <th class="data">Course Name</th>
-                    <th class="data">Course Id</th>
-                    <th class="data">Time</th>
-                    <th class="data">Section</th>
-                </tr>
+<body>
+    <div class="headFromSignUp">
+        <h3>Your Course Mate</h3>
+    </div>
 
-                <tr>
-                    <td class="data">Data Structure</td>
-                    <td class="data">Course Id</td>
-                    <td class="data">Time</td>
-                    <td class="data">Section</td>
-                </tr>
+    <div class="search-container">
+        <form  >
+            <input type="text" id="courseName" placeholder="Enter Your Course....." name="search">
+            <button ><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div id="courseTable">
+        <table border="2">
+            <tr>
+                <th class="data">Course Name</th>
+                <th class="data">Course Id</th>
+                <th class="data">Section</th>
+                <th class="data">Time</th>
+            </tr>
+            <% routine.forEach((routineItem)=>{ %>
+                    <tr>
+                        <td class="data">
+                            <%= routineItem.CName %>
+                        </td>
+                        <td class="data">
+                            <%= routineItem.CodeId %>
+                        </td>
+                        <td class="data">
+                            <%= routineItem.Section %>
+                        </td>
+                        <td class="data">
+                            <%= routineItem.Time %>
+                        </td>
+                    </tr>
+            <% }) %>
+        </table>
 
-            </table>
 
-        </div>
+    </div>
 
-    </body>
+</body>
+
 </html>
